@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ladesign</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-favicon.png">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script defer src="js/app.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a class="btn__scroll" href="#"></a>
+      <div class="header__logo">
+        <a class="header__logo-link" href="#" tabindex="-1">
+          <img class="header__logo-img" src="images/logo_white.png" alt="Логотип компании">
+        </a>
+        <a class="header__logo-link logo-visible" href="#" tabindex="-1">
+          <img class="header__logo-img" src="images/logo_black.png" alt="логотип компании">
+        </a>
+      </div>
+      <div class="header__burger burger">
+        <span class="burger__span menu1"></span>
+        <span class="burger__span menu2"></span>
+        <span class="burger__span menu3" tabindex="0"></span>
+      </div>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#portfolio">Портфолио</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#price">услуги и цены</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contacts">контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__wrap">
+        <a class="header__phone-hero" href="tel:+7 918 412-34-43">+7 918 412-34-43</a>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="hero">
+      <div class="container hero__container">
+        <h1 class="hero__title">Ladesign</h1>
+        <span class="hero__span">Дизайн-проекты жилых и коммерческих помещений. Малая архитектура</span>
+      </div>
+    </section>
+    <section id="team" class="team">
+      <div class="container team__container">
+        <h2 class="team__title">Наша команда дает уверенность</h2>
+        <div class="team__wrap">
+          <div class="team__box">
+            <p class="team__text">Дизайн-проект от студии LA Design не только совершенен по дизайну, но и реализуем</p>
+            <ul class="team__list">
+              <li class="team__item">
+                <button class="team__btn">Каждый проект уникален</button>
+                <div class="team__content">
+                  <p class="team__content-text">
+                    Дизайнеры и архитекторы студии не работают по шаблону, учитывают все пожелания и не копируют работы из чужих портфолио
+                  </p>
+                </div>
+              </li>
+              <li class="team__item">
+                <button class="team__btn">Полное сопровождение</button>
+                <div class="team__content">
+                  <p class="team__content-text">
+                    Клиент может заказать услугу по авторскому надзору и вообще не приезжать на объект. Мы будем контролировать и корректировать ход выполнения ремонтных работ согласно дизайн-проекту
+                  </p>
+                </div>
+              </li>
+              <li class="team__item">
+                <button class="team__btn">Согласование перепланировки</button>
+                <div class="team__content">
+                  <p class="team__content-text">
+                    Поможем согласовать любые планировочные решения, которые не противоречат закону. Возьмем на себя все бумажные вопросы, чтобы освободить ваше время
+                  </p>
+                </div>
+              </li>
+              <li class="team__item">
+                <button class="team__btn">Техническая документация</button>
+                <div class="team__content">
+                  <p class="team__content-text">
+                    Готовим полный пакет документов, который гарантирует ответственный подход к работе и высокое качество реализованного дизайн-проекта
+                  </p>
+                </div>
+              </li>
+              <li class="team__item">
+                <button class="team__btn">Строгая политика конфиденциальности</button>
+                <div class="team__content">
+                  <p class="team__content-text">
+                    Обеспечиваем защиту персональных данных заказчиков и не раскрываем их третьим лицам.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <img class="team__img" src="images/team_img.png" alt="фото холла">
+        </div>
+      </div>
+    </section>
+    <section id="portfolio" class="portfolio">
+      <div class="container portfolio__container">
+        <h2 class="portfolio__title">Портфолио</h2>
+        <ul class="portfolio__btns btns-list">
+          <li class="btns-list__item">
+            <button class="btns-list__btn all-elems">все работы
+              <sup class="btns-list__num num-all"></sup>
+            </button>
+          </li>
+          <li class="btns-list__item">
+            <button class="btns-list__btn apart-elems">квартиры
+              <sup class="btns-list__num num-appart"></sup>
+            </button>
+          </li>
+          <li class="btns-list__item">
+            <button class="btns-list__btn home-elems">дома
+              <sup class="btns-list__num num-home"></sup>
+            </button>
+          </li>
+          <li class="btns-list__item">
+            <button class="btns-list__btn commerc-elems">коммерческие помещения
+              <sup class="btns-list__num num-commerc"></sup>
+            </button>
+          </li>
+        </ul>
+        <ul class="portfolio__list">
+          <li class="portfolio__item item1 apart">
+            <img class="portfolio__img" src="images/portfolio/bath01.png" alt="ванная комната">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">loft</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item2 apart">
+            <img class="portfolio__img" src="images/portfolio/bedroom1.png" alt="спальня">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">bedroom</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item3 home">
+            <img class="portfolio__img" src="images/portfolio/dining1.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item4 apart">
+            <img class="portfolio__img" src="images/portfolio/dining2.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item5 home">
+            <img class="portfolio__img" src="images/portfolio/stears1.png" alt="лестница">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item6 home">
+            <img class="portfolio__img" src="images/portfolio/living1.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item7 apart">
+            <img class="portfolio__img" src="images/portfolio/living2.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item8 commerc">
+            <img class="portfolio__img" src="images/portfolio/office1.png" alt="офис">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">office</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item9 apart">
+            <img class="portfolio__img" src="images/portfolio/blcn1.png" alt="балкон">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item10 apart">
+            <img class="portfolio__img" src="images/portfolio/living3.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item11 apart">
+            <img class="portfolio__img" src="images/portfolio/bath01.png" alt="ванная комната">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">bathroom</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item12 apart">
+            <img class="portfolio__img" src="images/portfolio/bedroom1.png" alt="спальня">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item13 home">
+            <img class="portfolio__img" src="images/portfolio/dining1.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item14 apart">
+            <img class="portfolio__img" src="images/portfolio/dining2.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item15 home">
+            <img class="portfolio__img" src="images/portfolio/stears1.png" alt="лестница">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item16 home">
+            <img class="portfolio__img" src="images/portfolio/living1.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+          <li class="portfolio__item item17 apart">
+            <img class="portfolio__img" src="images/portfolio/living2.png" alt="столовая">
+            <div class="portfolio__hover">
+              <h3 class="portfolio__hover-subtitle">apartment</h3>
+              <span class="portfolio__hover-info">Unique collection</span>
+            </div>
+          </li>
+        </ul>
+        <button class="portfolio__btn btn">показать еще работы</button>
+        <div class="portfolio__application">
+          <button class="portfolio__btn-applic btn">оставить заявку на проект</button>
+          <div class="portfolio__modal">
+            <div class="portfolio__modal-content">
+              <div class="menu__close" tabindex="0">
+                <span class="menu__close-span close1"></span>
+                <span class="menu__close-span close2"></span>
+              </div>
+              <p class="portfolio__modal-title">оставЬТЕ СВОИ КОНТАКТЫ. мЫ СВЯЖЕМСЯ С ВАМИ И ОБСУДИМ ВАШ ПРОЕКТ</p>
+              <div class="portfolio__modal-wrap">
+                <input class="portfolio__modal-input" type="text" placeholder="Ваше имя">
+                <input class="portfolio__modal-input" type="text" placeholder="Ваш телефон">
+              </div>
+              <div class="portfolio__modal-box">
+                <button class="portfolio__modal-btn btn btn-color">отправить</button>
+                <span class="portfolio__modal-span">Нажимая на кнопку, я даю <a class="portfolio__modal-link" href="#">согласие на обработку персональных данных</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__container">
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a class="footer__link" href="#">houzz</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">instagram</a>
+        </li>
+      </ul>
+      <span class="footer__text">© 2022 LA Design, all rights reserved.</span>
+    </div>
+  </footer>
+</body>
+
+</html>
