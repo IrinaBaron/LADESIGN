@@ -305,6 +305,7 @@ if (typeof document !== 'undefined') {
 
 document.addEventListener('DOMContentLoaded', () => {
   try {
+    openModal();
     // ----------burger-menu 
 
     const burgerBtn = document.querySelector('.header__burger')
@@ -345,11 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
           e.target.classList.toggle('show');
-          e.target.nextElementSibling.classList.toggle('show'); 
+          e.target.nextElementSibling.classList.toggle('show');
         }
       })
       return
-      })
+    })
 
     // -------------portfolio
     let elements = document.querySelectorAll('.portfolio__item');
@@ -387,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
           let aparts = document.querySelectorAll('.apart');
           aparts.forEach(apart => {
             apart.style.display = 'block';
-            
+
           })
           // document.querySelector('.item4').style.gridColumn = '5/7';
           return
@@ -426,27 +427,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //--------------modal
-    const clickModal = document.querySelector('.portfolio__btn-applic');
-    const modal = document.querySelector('.portfolio__modal');
+    function openModal() {
+      const clickModal = document.querySelector('.portfolio__btn-applic');
+      const modal = document.querySelector('.portfolio__modal');
 
-    clickModal.addEventListener('click', () => {
-      modal.classList.add('modal_active');
-      document.body.classList.add('stop-scrolling');
-    });
+      clickModal.addEventListener('click', () => {
+        modal.classList.add('modal_active');
+        document.body.classList.add('stop-scrolling');
+      });
 
-    let closeModal = document.querySelector('.portfolio__modal .menu__close');
-    closeModal.addEventListener('click', () => {
-      modal.classList.remove('modal_active');
-      document.body.classList.remove('stop-scrolling');
-    });
-
-    closeModal.addEventListener('keyup', (e) => {
-      if (e.code == 'Enter') {
+      let closeModal = document.querySelector('.portfolio__modal .menu__close');
+      closeModal.addEventListener('click', () => {
         modal.classList.remove('modal_active');
         document.body.classList.remove('stop-scrolling');
-        return
-      }
-    });
+      });
+
+      closeModal.addEventListener('keyup', (e) => {
+        if (e.code == 'Enter') {
+          modal.classList.remove('modal_active');
+          document.body.classList.remove('stop-scrolling');
+          return
+        }
+      });
+    }
+    
 
     // let closeInfo = document.querySelector('.contacts__close');
 
@@ -477,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //   e.preventDefault();
     //   let validName = validateName();
     //   let validEmail = validateEmail();
-      
+
     // })
 
     // aboutBtn.addEventListener('click', function (e) {
@@ -536,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ------------scroll--------------
     const btnScroll = document.querySelector('.btn__scroll');
     window.addEventListener('scroll', () => {
-      
+
       let scrollNum = window.pageYOffset;
       console.log(scrollNum);
       if (scrollNum >= '100') {
@@ -548,16 +552,16 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         btnScroll.style.display = 'none';
       }
-      if(document.querySelector('.header').classList.contains('portfolio-header')) {
+      if (document.querySelector('.header').classList.contains('portfolio-header')) {
         return
       }
-      createScroll(750, scrollNum);
-      if (document.documentElement.clientWidth <= 1225) {
-        createScroll(550, scrollNum);
-      };
-      if (document.documentElement.clientWidth <= 1023) {
-        createScroll(430, scrollNum);
-      };
+      createScroll(150, scrollNum);
+      // if (document.documentElement.clientWidth <= 1225) {
+      //   createScroll(550, scrollNum);
+      // };
+      // if (document.documentElement.clientWidth <= 1023) {
+      //   createScroll(430, scrollNum);
+      // };
 
     }, { passive: true })
 
@@ -570,17 +574,132 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function createScroll(num, scrollNum) {
-      
-      if(scrollNum >= num) {
+
+      if (scrollNum >= num) {
         document.querySelector('.header').classList.add('color-header');
       } else {
         document.querySelector('.header').classList.remove('color-header');
       }
     }
 
+
   } catch (error) {
     console.log(error)
   }
 
+
+})
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    let elementsContent = document.querySelectorAll('.price-dev__content');
+    if(document.documentElement.clientWidth >= 1024) {
+      let btnPriceMore = document.querySelector('.btn-show-content');
+  
+      btnPriceMore.addEventListener('click', () => {
+        if (btnPriceMore.classList.contains('active')) {
+          btnPriceMore.textContent = 'развернуть';
+          elementsContent.forEach(elem => {
+            elem.classList.remove('active');
+          })
+          btnPriceMore.classList.remove('active');
+          return;
+        }
+        elementsContent.forEach(elem => {
+          elem.classList.toggle('active');
+        });
+        btnPriceMore.classList.toggle('active');
+        btnPriceMore.textContent = 'свернуть';
+      });
+    }
+    
+    if(document.documentElement.clientWidth <= 1023) {
+      let btnsShow = document.querySelectorAll('.price-dev__btn-media');
+      let btnsOrder = document.querySelectorAll('.price-dev__btn');
+
+      btnsShow.forEach(btn => {
+        btn.addEventListener('click', e => {
+          let parent = e.target.parentNode;
+          let content = parent.firstElementChild.nextElementSibling;
+
+          if (e.target.closest('.active')) {
+            btn.textContent = 'развернуть';
+            e.target.classList.remove('active');
+            e.target.previousElementSibling.classList.remove('active');
+            content.classList.remove('active');
+          } else {
+            for (let i = 0; i < btnsShow.length; i++) {
+              if (btnsShow[i].classList.contains('active')) {
+                btnsShow[i].textContent = 'развернуть';
+                btnsShow[i].classList.remove('active');
+                elementsContent[i].classList.remove('active');
+                btnsOrder[i].classList.remove('active');
+              }
+            }
+            e.target.classList.toggle('active');
+            e.target.previousElementSibling.classList.toggle('active');
+            content.classList.toggle('active');
+            btn.textContent = 'свернуть';
+          }
+        })
+        return
+      })
+
+      document.addEventListener('click', () => {
+        let listContentText = document.querySelectorAll('.price-dev__content.active .dev-content__item');
+
+        listContentText.forEach(elem => {
+          if( elem.textContent.length <= 1) {
+            elem.style.display = 'none';
+          }
+        })
+      })
+      
+    }
+
+    //-------swiper
+
+    const swiper1 = new Swiper('.price-project__swiper', {
+  
+      slidesPerView: 4,
+      spaceBetween: 30,
+      pagination: {
+        el: '.price-project__swiper .swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.price-project__swiper .swiper-button-next',
+        prevEl: '.price-project__swiper .swiper-button-prev',
+      },
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 40,
+        },
+        570: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1225: {
+          slidesPerView: 4,
+        }
+      }
+  
+    });
+
+    openModal();
+
+  } catch (error) {
+    error
+  }
 
 })
