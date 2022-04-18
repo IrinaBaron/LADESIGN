@@ -1,3 +1,27 @@
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    let inputs = document.querySelectorAll('.contacts-hero__input');
+    console.log(inputs.length)
+
+    // inputs.forEach(input => {
+    //   input.addEventListener('click', () => {
+    //     // if(input.value == '') {
+    //       input.style.borderBottom = '2px solid #393246';
+    //     // }
+        
+    //   })
+    // })
+
+
+
+  } catch (error) {
+    console.log(error);
+  }
+
+
+
+
+})
 /**
  * Applies the :focus-visible polyfill at the given scope.
  * A scope in this case is either the top-level Document or a Shadow Root.
@@ -305,10 +329,15 @@ if (typeof document !== 'undefined') {
 
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    openModal();
+    try {
+      openModal();
+    } catch (error) {
+      console.log(error)
+    }
+    
     // ----------burger-menu 
 
-    const burgerBtn = document.querySelector('.header__burger')
+    const burgerBtn = document.querySelector('.header__burger');
 
     burgerBtn.addEventListener('click', clickBurger);
     burgerBtn.addEventListener('keyup', (e) => {
